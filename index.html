@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Shop</title>
+
+    <!--==== Css ====-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!--==== Box-icons ====-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--==== Fav-icon ====-->
+    <link rel="icon" href="/assets/img/favicon-16x16.png">
+
+    <!--==== Fontawesome ====-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <!--==== Swiper Js ====-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!--==== JQeury ====-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!--========== Header ==========-->
+  
+    <div class="header-container" id="header-container">
+            <div class="header-top ">
+                <div class="header-top-info bd-container">
+                    <div class="top-text">
+                        <p>Contact for bicycle repair & Services +63-905-572-3210</p>
+                    </div>
+    
+                    <div class="social media">
+                        <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                        <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+                        <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-info bd-container">
+
+                <div class="telephone">
+                    <div class="phone-icon">
+                        <i class='bx bxs-phone'></i>
+                    </div>
+
+                    <div class="contact-info">
+                        <span>+63-906-560-2448</span><br>
+                        <span>johndoe@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="location">
+                    <div class="home-icon">
+                        <i class='bx bxs-home-circle' ></i>
+                    </div>
+
+                    <div class="home-address">
+                        3/2 East Mangaldan<br>
+                        Brgy. Banaoang
+                    </div>
+                </div>
+
+                <div class="schedule">
+                    <div class="schedule-icon">
+                        <i class='bx bxs-time-five' ></i>
+                    </div>
+
+                    <div class="schedule-info">
+                        <span>Monday - Sunday</span><br>
+                        <span>10:00AM -17:00PM</span>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+    <header id="header">
+        <div class="header-content" id="header-content">
+            <div class="header-menu bd-container" id="header-menu"> 
+                <a href="#" class="logo"><img src="/assets//img/logo-white.png" alt=""></a>
+                    <div class="menu-toggle" onclick="toggleMenu();"></div>
+                        <ul class="nav-menu">
+                            <li><a href="#" class="nav-item active-nav" onclick="toggleMenu();">Home</a></li>
+                            <li><a href="#about" class="nav-item" onclick="toggleMenu();">About Us</a></li>
+                            <li><a href="#services" class="nav-item" onclick="toggleMenu();">Services</a></li>
+                            <li><a href="#plan" class="nav-item" onclick="toggleMenu();">Plan</a></li>
+                            <li><a href="#tutorials" class="nav-item" onclick="toggleMenu();">Tutorials</a></li>
+                            <li><button type="submit" class="login-btn" id="login-btn" onclick="toggleMenu();">Login</button></li>
+                        </ul>
+            </div>
+        </div>
+    </header>
+
+    <!--========== Header END ==========-->
+
+    <!--========== Login Modal ==========-->
+    <div class="loginModal" id="loginModal">
+
+        <!--==== Modal Content ====-->
+        <div class="modal-content bd-container">
+            <div class="modal-header">
+                <i class="fas fa-window-close" id="closed" ></i>
+                <h2>BICYCLE REPAIR</h2>
+            </div>
+            <div class="modal-body">
+                <img src="/assets/img/repair-man.png" class="user-icon" alt="user-icon">
+                <form>
+                    <div class="login-validation">
+                        <label for="login-info">Login</label>
+                        <input type="email" name="email" id="login-email" placeholder="Email Address">
+                        <input type="password" name="password" id="password" placeholder="Password">
+                        <button type="submit" class="btn-login" id="btn-login">Login</button>
+                    </div>
+                </form>
+
+                <div class="footer-modal">
+                    <div class="register-user">
+                        <a href="#/"id="register">New User?</a>
+                    </div>
+
+                    <div class="reset-password">
+                        <a href="#/">Forgot Password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--========== Login Modal End ==========-->
+
+    <!--========== Register Modal ==========-->
+    <div class="registerModal" id="registerModal">
+
+        <!--==== Modal Content ====-->
+        <div class="modal-content bd-container">
+            <div class="modal-header">
+                <i class="fas fa-window-close" id="register-closed" ></i>
+                <h2>BICYCLE REPAIR</h2>
+            </div>
+            <div class="modal-body">
+                <img src="/assets/img/repair-man.png" class="user-icon" alt="user-icon">
+                <form>
+                    <div class="login-validation">
+                        <label for="register-info">Register User</label>
+                        <input type="text" name="username" id="register-username" placeholder="username">
+                        <input type="email" name="email" id="register-email" placeholder="Email Address">
+                        <input type="password" name="password" id="register-password" placeholder="Password">
+                        <button type="submit" class="btn-register" id="btn-register">Register</button>
+                    </div>
+                </form>
+
+                <!-- <div class="footer-modal">
+                    <div class="register-user">
+                        <a href="#/"id="register">New User?</a>
+                    </div>
+
+                    <div class="reset-password">
+                        <a href="#/">Forgot Password?</a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!--========== Register Modal END ==========-->
+
+    <!--========== Forgot Password ==========-->
+
+    <!--========== Forgot Password END ==========-->
+
+
+    <!--========== Banner Section ==========-->
+
+    <main class="main-container">
+
+        <!--========== Bannner ==========-->
+        <section class="banner-container">
+            <div class="banner-content bd-container">
+                <div class="banner-text">
+                    <span>Need Any Suggestions ?</span>
+                    <h1>Bike fitting Service</h1>
+
+                    <div class="appointment-btn">
+                        <a href="#"> Book Appointment </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!--========== Bannner Section END ==========-->
+
+        <!--========== Repair Section ==========-->
+        <section class="repair-container">
+            <div class="repair-content bd-container">
+                <div class="repair-info">
+                    <h2 class="title-text">Repair Process</h2>
+                    <img class="bike-icon" src="/assets/img/bicycle.png" alt="bicycle">
+                    <p class="text">Very easy and fast way to book your repair service and payment system.</p>
+                </div>
+         
+
+                <div class="repair-process-card">
+                    <div class="repair book">
+                        <div class="diamond-shape">
+                            <div class="item-count">01</div>
+                        </div>
+                        <h3 class="repair-title">Book Online</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Need to online booking your repair service</p>
+                    </div>
+
+                    <div class="repair service">
+                        <div class="diamond-shape">
+                            <div class="item-count">02</div>
+                        </div>
+                        <h3 class="repair-title">Select Service</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Select the service what you want from our query</p>
+                    </div>
+
+                    <div class="repair test">
+                        <div class="diamond-shape">
+                            <div class="item-count">03</div>
+                        </div>
+                        <h3 class="repair-title">Repair & Test</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">You have already done. Now it's our duty to fix it.</p>
+                    </div>
+
+                    <div class="repair pay">
+                        <div class="diamond-shape">
+                            <div class="item-count">04</div>
+                        </div>
+                        <h3 class="repair-title">Bill Pay</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Once we completed, we will inform you to pay.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!--========== Repair Section END ==========-->
+
+
+        <!--========== About Section ==========-->
+        <section class="about-container" >
+            <div class="about-content bd-container" id="about">
+
+                <div class="about-information">
+                    <h2 class="title-text">About us</h2>
+                    <img class="bike-icon" src="/assets/img/bicycle.png" alt="bicycle">
+                    <p class="text">If you think your bike may be beyond repair, come on down to see us.</p>
+                </div>
+
+                <div class="about-info">
+                    <div class="about-text">
+                        <p class="about-text-info">We have fully trained, experienced sevice department ready to handle all of your bicycle service needs</p>
+                        <p class="about-text-repair">Whether you need a simple adjust on a performance overhaul, our trained mechanics will get you safety back out riding. Estimate are always <span>FREE</span>, we service all brands of bicycles. We continue extended service hours throughout the whole year to keep you riding. </p>
+
+                        <div class="about-other-info">
+                            <div class="row cerficate">
+                                <i class="fas fa-users"></i>
+                                <h3>Certified Staff</h3>
+                            </div>
+
+                            <div class="row support">
+                                <i class="fas fa-life-ring"></i>
+                                <h3>24/7 Support</h3>
+                            </div>
+
+                            <div class="row quality-service">
+                                <i class="fas fa-tools"></i>
+                                <h3>Quality Service</h3>
+                            </div>
+
+                            <div class="row cost">
+                                <i class="fas fa-money-bill-alt"></i>
+                                <h3>Cost Effective</h3>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="about-img">
+                        <img src="/assets/img//about-us.jpg" alt="about-us-repair">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--========== About Section END ==========-->
+
+        <!--========== Facts Section ==========-->
+        <section class="facts-container">
+            <div class="facts-content bd-container">
+
+                <div class="facts-info">
+                    <h2 class="title-text">Some Facts</h2>
+                    <img class="bike-icon" src="/assets/img/bicycle.png" alt="bicycle">
+                    <p class="text">Simply you can get a clear idea of about us that's how awesome we are</p>
+                </div>
+
+                <div class="facts-card">
+
+                    <div class="cards">
+                        <i class='bx bx-trending-up'></i>
+                        <h3 class="number1">25k</h3>
+                        <p>Success Projects</p>
+                    </div>
+
+                    <div class="cards">
+                        <i class='bx bx-check-circle'></i>
+                        <h3 class="number2">38k</h3>
+                        <p>Running projects</p>
+                    </div>
+
+                    <div class="cards">
+                        <i class="far fa-lightbulb"></i>
+                        <h3 class="number3">68k</h3>
+                        <p>happy Recipient</p>
+                    </div>
+
+                    <div class="cards">
+                        <i class="fas fa-award"></i>
+                        <h3 class="number4">13k</h3>
+                        <p>Total Awards</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+        <!--========== Facts Section END ==========-->
+        
+        <!--========== Our Experts Section ==========-->
+        <!--========== Our Experts Section END ==========-->
+
+        <!--========== Our Services Section ==========-->
+        <section class="services-container" id="services">
+            <div class="services-content bd-container">
+                <div class="services-text">
+                    <h3 class="title-text">Our Services</h3>
+                    <img class="bike-icon" src="/assets/img/bicycle.png" alt="bicycle">
+                    <p class="text">You might be surprised how awsome service we provide for your needs</p>
+                </div>
+
+                <div class="services-card">
+                    <div class="repair">
+                        <div class="diamond-shape">
+                            <div class="item-count"><i class="fas fa-tools"></i></div>
+                        </div>
+                        <h3 class="repair-title">Fixing Bike</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Cyclist will benefit from a basic understanding of cycle maintenance</p>
+                    </div>
+
+                    <div class="repair">
+                        <div class="diamond-shape">
+                            <div class="item-count"><i class="fas fa-ban"></i></div>
+                        </div>
+                        <h3 class="repair-title">Remove Crease</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Cyclist will benefit from a basic understanding of cycle maintenance</p>
+                    </div>
+
+                    <div class="repair">
+                        <div class="diamond-shape">
+                            <div class="item-count"><i class="fas fa-hands-wash"></i></div>
+                        </div>
+                        <h3 class="repair-title">Washing Bike</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Cyclist will benefit from a basic understanding of cycle maintenance</p>
+                    </div>
+
+                    <div class="repair">
+                        <div class="diamond-shape">
+                            <div class="item-count"><i class="fas fa-toolbox"></i></div>
+                        </div>
+                        <h3 class="repair-title">Repair Tires</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Cyclist will benefit from a basic understanding of cycle maintenance</p>
+                    </div>
+
+                    <div class="repair">
+                        <div class="diamond-shape">
+                            <div class="item-count"><i class="fas fa-toolbox"></i></div>
+                        </div>
+                        <h3 class="repair-title">Tire Pressure</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Cyclist will benefit from a basic understanding of cycle maintenance</p>
+                    </div>
+
+                    <div class="repair">
+                        <div class="diamond-shape">
+                            <div class="item-count"><i class="far fa-lightbulb"></i></div>
+                        </div>
+                        <h3 class="repair-title">Buying Tips</h3>
+                        <div class="border-line"></div>
+                        <p class="repair-text">Cyclist will benefit from a basic understanding of cycle maintenance</p>
+                    </div>
+
+                </div>
+                
+            </div>
+        </section>
+        <!--========== Our Services Section END ==========-->
+
+        <!--========== Our Fees Section ==========-->
+        <section class="fees-container" id="plan">
+            <div class="fees-content bd-container">
+                <div class="fees-text">
+                    <h3 class="title-text">Our Plan</h3>
+                    <img class="bike-icon" src="/assets/img/bicycle.png" alt="bicycle">
+                    <p class="text">Focusing on top quality and fast efficient service with a guarantee</p>
+                </div>
+            
+
+                <div class="fees-card" >
+                    <div class="fees">
+                        <h4><span class="dollar">$</span>150/Month</h4>
+                        <span class="plan">Basic</span>
+                        <div class="border-line"></div>
+                        <p>Prices may vary from region to region lorem</p>
+                        <a href="#/">Book Now</a>
+                    </div>
+
+                    <div class="fees">
+                        <h4><span class="dollar">$</span>250/Month</h4>
+                        <span class="plan">Standard</span>
+                        <div class="border-line"></div>
+                        <p>Prices may vary from region to region lorem</p>
+                        <a href="#/">Book Now</a>
+                    </div>
+
+                    <div class="fees">
+                        <h4><span class="dollar">$</span>475/Month</h4>
+                        <span class="plan">Extended</span>
+                        <div class="border-line"></div>
+                        <p>Prices may vary from region to region lorem</p>
+                        <a href="#/">Book Now</a>
+                    </div>
+
+                    <div class="fees">
+                        <h4><span class="dollar">$</span>750/Month</h4>
+                        <span class="plan">Premium</span>
+                        <div class="border-line"></div>
+                        <p>Prices may vary from region to region lorem</p>
+                        <a href="#/">Book Now</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--========== Our Fees Section END ==========-->
+
+        <!--========== Testimonials Section ==========-->
+        <section class="testimonials-container" id="testimonials">
+            <div class="testimonials-content bd-container ">
+                <div class="testimonials-text">
+                    <h3 class="title-text">Our Testimonials</h3>
+                    <img class="bike-icon" src="/assets/img/bicycle.png" alt="bicycle">
+                    <p class="text">What people are saying about us, repair process and their satisfaction</p>
+                </div>
+
+                <div class="testimonials  swiper-containers">
+                    <div class="testimonials-info swiper-wrapper">
+
+                        <div class="feedback swiper-slide">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Amazing service during a stressful time with our new rescued family member, very courteous & helpful Lorem ipsum dolor sit amet.</p>
+
+                            <strong>Sunny Brook Church </strong><span> - CEO MW TECH INC.</span>
+                        </div>
+
+                        <div class="feedback swiper-slide">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Amazing service during a stressful time with our new rescued family member, very courteous & helpful Lorem ipsum dolor sit amet.</p>
+
+                            <strong>Sunny Brook Church </strong><span> - CEO MW TECH INC.</span>
+                        </div>
+
+                        <div class="feedback swiper-slide">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Amazing service during a stressful time with our new rescued family member, very courteous & helpful Lorem ipsum dolor sit amet.</p>
+
+                            <strong>Sunny Brook Church </strong><span> - CEO MW TECH INC.</span>
+                        </div>
+
+                        <div class="feedback swiper-slide">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Amazing service during a stressful time with our new rescued family member, very courteous & helpful Lorem ipsum dolor sit amet.</p>
+
+                            <strong>Sunny Brook Church </strong><span> - CEO MW TECH INC.</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--========== Testimonials Section END ==========-->
+
+        <!--========== Subscribe Section ==========-->
+        <section class="subscribe-container">
+            <div class="subscribe-content bd-container">
+                <div class="subscribe-text">
+                    <h3 class="title-text">Subscribe newsletter</h3>
+                    <img class="bike-icon" src="/assets/img/bicycle.png" alt="bicycle">
+                    <p class="text">subscribe and get in touch with us and get regular updates from us</p>
+
+                    <div class="validation">
+                        <form>
+                            <input type="email" id="email" placeholder="Email Addres...">
+                            <button class="validate-btn" type="button" id="validate-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--========== Subscribe Section END ==========-->
+
+        <!--========== News Section ==========-->
+        <section class="news-container" id="tutorials">
+            <div class="news-content bd-container">
+                <div class="news-text">
+                    <h3 class="title-text">Our Tutorials</h3>
+                    <p class="text">Here are the latest tutorials you can follow .</p>
+                </div>
+
+                <div class="news-tutorials">
+
+                    <div class="article">
+                        <img src="/assets/img/chainbreaker.png" alt="chain">
+                        <div class="article-details">
+                            <Strong>Fix A Damaged MTB Chain</Strong>
+                        <p>Breaking a chain is everyone's worst nightmare but in reality it only slows you down if you don't have the tools and know-how to repair it.</p>
+
+                        <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <img src="/assets/img/positioning.png" alt="positioning">
+                        <div class="article-details">
+                            <Strong>Setting Up 2 Finger Brake</Strong>
+                        <p>A lot of time brake levers are fitted in a wrong position. To correctly determine the position, place your hands outright as if you were riding the bike</p>
+                        <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <img src="/assets/img/workonallenbolts.png" alt="positioning">
+                        <div class="article-details">
+                            <Strong>Fix Disc Brake Rub</Strong>
+                        <p>This is one of the easiest fixes out there. Whether you are out riding or back at home working on your whip it's a quick 3 minute fix that will leave you riding waaaaay better.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <img src="/assets/img/chainposition.png" alt="chainposition">
+                        <div class="article-details">
+                            <Strong>Install A Wheel In Vertical Dropouts</Strong>
+                        <p>You’ll need a wheel and quick release skewer. Start by removing the old wheel from your bike. It will come off easier.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <img src="/assets/img/snipendcap.png" alt="snipendcap">
+                        <div class="article-details">
+                            <Strong>DIY Cable Routing Guide</Strong>
+                        <p>You’ll need a wheel and quick release skewer. Start by removing the old wheel from your bike</p>
+                        <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                    <div class="article">
+                        <img src="/assets/img/saddleposition.png" alt="saddleposition">
+                        <div class="article-details">
+                            <Strong>Installing And Fitting A Bike Saddle</Strong>
+                        <p>A saddle in the wrong position can put excess stress on your legs and your hips.Once you find the ideal position</p>
+                        <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+         <!--========== News Section END ==========-->
+    </main>
+
+    <!--========== Footer ==========-->
+    <footer class="footer-container">
+        <div class="footer-content bd-container">
+            <div class="footer-logo">
+                <img src="/assets/img/logo-white.png" alt="logo-white">
+              <div class="footer-logo-text">
+                <p>A lot of time brake levers are fitted in a wrong position. To correctly determine the position, place your hands outright as if you were riding the bike</p>
+              </div>
+                <div class="social-media">
+                    <a href="#"><i class='bx bxl-facebook-square'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                </div>
+            </div>
+
+
+            <div class="footer-nav-links">
+                <ul class="footer-menu">
+                    <li><a href="#" >Home</a></li>
+                    <li><a href="#about" >About Us</a></li>
+                    <li><a href="#services" >Services</a></li>
+                    <li><a href="#plan" >Plan</a></li>
+                    <li><a href="#tutorials" >Tutorials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav-links">
+                <ul class="footer-menu">
+                    <li><a href="#" >Carrers</a></li>
+                    <li><a href="#about" >Support</a></li>
+                    <li><a href="#services" >Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h2>Contact Us</h2>
+                <div class="telephone">
+                    <div class="phone-icon">
+                        <i class='bx bxs-phone'></i>
+                    </div>
+
+                    <div class="contact-info">
+                        <span>+63-906-560-2448</span><br>
+                        <span>johndoe@gmail.com</span>
+                    </div>
+                </div>
+
+                <div class="location">
+                    <div class="home-icon">
+                        <i class='bx bxs-home-circle' ></i>
+                    </div>
+
+                    <div class="home-address">
+                        3/2 East Mangaldan<br>
+                        Brgy. Banaoang
+                    </div>
+                </div>
+
+                <div class="schedule">
+                    <div class="schedule-icon">
+                        <i class='bx bxs-time-five' ></i>
+                    </div>
+
+                    <div class="schedule-info">
+                        <span>Monday - Sunday</span><br>
+                        <span>10:00AM -17:00PM</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+    <!--========== Footer END ==========-->
+
+    <!--==== Main Js ====-->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- Validation Js -->
+    <script src="/assets/js/validations.js"></script>
+
+    <!--==== Swiper Js ====-->
+    <script src="/assets/js/swiper.js"></script>
+
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/assets/js/scrollanimation.js"></script>
+
+    <!--==== Modal Login ====-->
+    <script src="/assets/js/modal-login.js"></script>
+
+    <!--==== Sweet Alert ====-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+</html>
