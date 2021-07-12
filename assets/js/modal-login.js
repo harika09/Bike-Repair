@@ -1,108 +1,97 @@
-
 // Modal Login
 var loginmodal = document.getElementById("loginModal");
 var btn = document.getElementById("login-btn");
-const loginclosed  = document.getElementById("closed");
+const loginclosed = document.getElementById("closed");
 
-btn.onclick = function(){
+btn.onclick = function () {
   loginmodal.style.display = "block";
-}
+};
 
-loginclosed.onclick = function(){
+loginclosed.onclick = function () {
   document.getElementById("loginModal").style.display = "none";
-}
+};
 
 //Modal Register
 const register = document.getElementById("register");
 const registerModal = document.getElementById("registerModal");
-const registerclosed  = document.getElementById("register-closed");
+const registerclosed = document.getElementById("register-closed");
 
-register.onclick = function(){
-  loginmodal.style.display = "none"
-  registerModal.style.display = "block"
-}
+register.onclick = function () {
+  loginmodal.style.display = "none";
+  registerModal.style.display = "block";
+};
 
-registerclosed.onclick = function(){
+registerclosed.onclick = function () {
   document.getElementById("registerModal").style.display = "none";
-
-}
+};
 
 //window.onclick = function(event){ // clicking outside the form will automatically hide the form
- // if(event.target == modal){
-  //  modal.style.display = "none";
- // }
+// if(event.target == modal){
+//  modal.style.display = "none";
+// }
 //}
-
 
 //Validation
 
-$("#btn-login").click(function(e){
-    e.preventDefault();
+$("#btn-login").click(function (e) {
+  e.preventDefault();
 
-    validation(); //Validate UserName and Password
-
+  validation(); //Validate UserName and Password
 });
 
-function validation(){
-    const email = document.getElementById("login-email").value;
-    const pass = document.getElementById("password").value;
-    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+function validation() {
+  const email = document.getElementById("login-email").value;
+  const pass = document.getElementById("password").value;
+  var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-    if(email == ""){
-        console.log("email is empty")
-        EmptyEmailError();
-    }
+  if (email == "") {
+    EmptyEmailError();
+  } else if (email.match(pattern)) {
+    validEmail();
+  } else {
+    InvalidEmail();
+  }
 
-    else if(email.match(pattern)){
-            console.log("Valid Email")
-            validEmail();
-    } else{
-        console.log("Invalid Email");
-        InvalidEmail();
-    }
-
-    if(pass == ""){
-        console.log("password is empty")
-        EmptyPassword();
-    }
+  if (pass == "") {
+    EmptyPassword();
+  }
 }
 
-function EmptyEmailError(){
-    email.style.borderColor = "red"
-    Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Email cannnot be empty',
-    })
-}
-
-function InvalidEmail(){
+function EmptyEmailError() {
+  email.style.borderColor = "red";
   Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Email is invalid',
-    })
+    icon: "error",
+    title: "Oops...",
+    text: "Email cannnot be empty",
+  });
 }
 
-function EmptyPassword(){
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Password cannot be empty',
-    })
+function InvalidEmail() {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Email is invalid",
+  });
 }
 
+function EmptyPassword() {
+  Swal.fire({
+    icon: "error",
+    title: "Oops...",
+    text: "Password cannot be empty",
+  });
+}
 
-function validEmail(){
- // const email = document.getElementById("login-email").value;
+function validEmail() {
+  // const email = document.getElementById("login-email").value;
   //const loginText = document.getElementById("login-btn");
 
   //loginText.innerHTML = email;
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Subscription Confirm!',
-        text: 'Thank you for subscribing!',
-        showConfirmButton: true,
-      })
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Subscription Confirm!",
+    text: "Thank you for subscribing!",
+    showConfirmButton: true,
+  });
 }
